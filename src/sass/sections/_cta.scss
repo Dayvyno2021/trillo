@@ -1,0 +1,64 @@
+.cta {
+  padding: 3.5rem;
+  text-align: center;
+
+  @media only screen and (max-width: $bp-medium){
+    padding: 2rem;
+  }
+
+  &__book-now {
+    text-transform: initial;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: capitalize;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: var((--color-white));
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    transition: all 0.5s;
+  }
+// SOMETHING CAN BE DONE ON THE REPEATED CODES like & > * {}
+  &__invisible {
+    display: inline-block;
+    position: absolute;
+    left: 0rem;
+    top: -100%;
+    padding: 2rem 0;
+    height: 100%;
+    width: 100%;
+    transition: top 0.5s;
+    
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+  }
+
+  &:hover &__invisible {
+    top: 0%;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}

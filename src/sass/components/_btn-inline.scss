@@ -1,0 +1,31 @@
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  // padding-bottom: 5px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color .2s;
+
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+    // animation: pulsate 1s infinite;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  // FOCUS: the animation started as i clicked ince
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
